@@ -1,9 +1,10 @@
 import pandas as pd
+import joblib
 from tensorflow.keras import Model
 from tensorflow.keras.layers import Input, Dense
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
-import joblib
+from tensorflow.keras.callbacks import EarlyStopping
 
 def load_data(file_path):
     """Load data from an Excel file."""
@@ -42,8 +43,11 @@ def train_model(data, target_column):
     # Build the neural network model
     model = build_model(X_train.shape[1])  # Input shape for the model
 
+    # Early stopping callback
+    early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+
     # Fit the model
-    model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=0.2)
+    model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=0.2, callbacks=[early_stopping])
 
     # Save the model and scaler
     model.save(f'models/{target_column}_model.h5')

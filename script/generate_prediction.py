@@ -2,9 +2,10 @@ import pandas as pd
 import joblib
 from tensorflow.keras.models import load_model
 from openpyxl import Workbook
-from openpyxl.styles import PatternFill
+from openpyxl.styles import PatternFill  # Add this import
 from openpyxl.utils.dataframe import dataframe_to_rows
 from preprocess import load_data, preprocess_data
+
 
 def save_predictions(original_df, predicted_df, output_path):
     """Save the original and predicted values to an Excel file in alternating rows."""
