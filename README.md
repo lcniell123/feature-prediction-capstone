@@ -1,9 +1,9 @@
-Machine Learning Predictions Project
+# Machine Learning Predictions Project
 
-Project Overview:
+## Project Overview:
 This project utilizes machine learning to predict multiple features based on input data. The models are trained using data from the input_data.xlsx file, and the predictions are saved to predictions.xlsx.
 
-Project Structure:
+## Project Structure:
 Data
 │
 ├── input_data.xlsx      # Input data file containing features and target values
@@ -22,7 +22,7 @@ Scripts
 ├── preprocess.py         # Script for data preprocessing
 └── train_model.py        # Script to train the models
 
-Prerequisites:
+## Prerequisites:
 Before you begin, ensure you have the following packages installed:
 - pandas
 - numpy
@@ -34,7 +34,7 @@ Before you begin, ensure you have the following packages installed:
 You can install the required packages using pip:
 pip install pandas numpy scikit-learn tensorflow openpyxl joblib
 
-Instructions:
+#### Instructions:
 1. Prepare the Input Data
    Ensure your input_data.xlsx file is correctly formatted with the necessary features and target columns.
 
